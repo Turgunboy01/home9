@@ -5,11 +5,13 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import ProductDetails from "./pages/productDetails/ProductDetails";
 import Cart from "./pages/cart/Cart";
+import ScrollTop from "./components/scrollToTop/ScrollTop";
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
+        <ScrollTop />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

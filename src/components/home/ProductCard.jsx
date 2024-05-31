@@ -15,11 +15,18 @@ const ProductCard = ({ item }) => {
           src={item.image_url}
           alt={item.common_name}
         />
-        <div className=" absolute w-[100px] -bottom-[20px] group-hover:bottom-[20px] transition-all duration-300 left-[33%]  h-[20px] flex gap-[20px]">
-          <SlBasket />
-          <FaRegHeart />
-          <Link to={`/card/${item.common_name}`}>
-            <IoSearch />
+        <div className=" absolute w-[160px] -bottom-[20px] group-hover:bottom-[40px] transition-all duration-300 left-[24%]  h-[20px] flex gap-[10px]">
+          <div className="hover:bg-[#fff] w-[100px] h-10 flex justify-center rounded-lg items-center hover:text-[#46A358]">
+            <SlBasket size={20} />
+          </div>
+          <div className="hover:bg-[#fff] w-[100px] h-10 flex justify-center rounded-lg items-center hover:text-[#46A358]">
+            <FaRegHeart size={20} />
+          </div>
+          <Link
+            to={`/card/${item.common_name}`}
+            className="hover:bg-[#fff] w-[100px] h-10 flex justify-center rounded-lg items-center hover:text-[#46A358]"
+          >
+            <IoSearch size={20} />
           </Link>
         </div>
       </div>

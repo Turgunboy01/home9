@@ -32,9 +32,15 @@ const ProductDetails = () => {
 
           <p>SKU: 192132</p>
           <p>Categories: Potter Plants</p>
-          <Link to={"/cart"} className="px-5 py-3 border rounded-lg">
-            add to card
-          </Link>
+
+          <div className="my-[30px]">
+            <Link
+              to={"/cart"}
+              className="px-5 py-3  border rounded-lg  bg-green-500 uppercase text-white hover:bg-green-600 font-semibold"
+            >
+              add to card
+            </Link>
+          </div>
           <p>Tags: Home, Garden, Plants</p>
           <p>Share this products:</p>
         </div>
