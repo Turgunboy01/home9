@@ -45,7 +45,7 @@ const ProductCards = () => {
   return (
     <div className="lg:container mx-auto px-5 mt-[100px]">
       <div className="flex justify-between gap-7">
-        <div className="flex-[.3]  bg-[#FBFBFB]">
+        <div className="flex-[.1] lg:flex-[.3] hidden md:block  bg-[#FBFBFB]">
           <div className="p-5">
             <Category />
             <div className="">
@@ -92,8 +92,8 @@ const ProductCards = () => {
             <img src={saleImg} alt="" />
           </div>
         </div>
-        <div className="">
-          <div className="flex justify-between px-2 items-center">
+        <div className="flex-1">
+          <div className="  flex  justify-between px-2 items-center">
             <div className="flex items-center gap-[37px]">
               <button className="font-bold border-b-[2px] border-b-[#46A358] py-1 text-[#46A358]">
                 All Plants
@@ -110,9 +110,9 @@ const ProductCards = () => {
               </select>
             </div>
           </div>
-          <div className="flex-1  grid grid-cols-3 gap-5">
+          <div className="flex-1  grid grid-cols-2  xl:grid-cols-3 gap-5">
             {currentProducts.map((item) => (
-              <div className="w-[350px] h-[400px]">
+              <div className="lg:w-[300px] h-[400px]">
                 <ProductCard item={item} key={item.id} />
               </div>
             ))}
