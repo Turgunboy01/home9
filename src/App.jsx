@@ -14,11 +14,13 @@ const App = () => {
       <BrowserRouter>
         <ScrollTop />
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/card/:id" element={<ProductDetails />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
+        <div className="pt-[100px]">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/card/:id" element={<ProductDetails />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </div>
         <Footer />
       </BrowserRouter>
     </div>
