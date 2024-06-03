@@ -56,25 +56,25 @@ const HomeCarousel = () => {
         </div>
         <div>
           <div className=" bg-gray-100 flex items-center justify-center">
-            <div className="flex flex-col md:flex-row items-center gap-[100px] p-8 rounded-lg  w-full ">
-              <div className="flex-1 text-center md:text-left">
-                <h2 className="text-[14px] sm:block hidden text-gray-500 font-medium">
+            <div className="flex  items-center gap-[100px] p-8 rounded-lg  w-full ">
+              <div className="flex-[.6] text-left">
+                <h2 className="text-[14px]  text-gray-500 font-medium">
                   WELCOME TO GREENSHOP
                 </h2>
-                <h1 className=" sm:block hidden text-[40px]  lg:text-[70px] font-bold text-gray-800">
+                <h1 className="  text-[40px]  lg:text-[70px] font-bold text-gray-800">
                   LET’S MAKE A BETTER{" "}
                   <span className="text-green-500"> PLANET</span>{" "}
                 </h1>
-                <p className="text-gray-600 text-[13px] sm:block hidden sm:text-[15px] mt-4">
+                <p className="text-gray-600 text-[13px]  sm:text-[15px] mt-4">
                   We are an online plant shop offering a wide range of cheap and
                   trendy plants. Use our plants to create a unique Urban Jungle.
                   Order your favorite plants!
                 </p>
-                <button className="mt-6 sm:block hidden bg-green-500 text-white px-6 py-3 rounded-full shadow hover:bg-green-600 transition duration-200">
+                <button className="mt-6  bg-green-500 text-white px-6 py-3 rounded-full shadow hover:bg-green-600 transition duration-200">
                   SHOP NOW
                 </button>
               </div>
-              <div className="flex-1 mt-8 md:mt-0 flex relative justify-center items-end">
+              <div className="flex-[.6] mt-0 flex relative justify-center items-end">
                 <img
                   src={sliderImg1}
                   alt="Plant"

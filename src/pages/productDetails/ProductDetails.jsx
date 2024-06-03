@@ -5,44 +5,115 @@ import PopularProducts from "../../components/popularProducts/PopularProducts";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const product = data.find((item) => item.common_name == id);
+  const product = data.find((item) => item.id == id);
   console.log(product);
   return (
     <div className="lg:container mx-auto px-5">
-      <div className="grid grid-cols-2 gap-[40px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-[40px]">
         <img
-          src={product.image_url}
+          src={product.img}
           alt=""
           className="w-[600px] h-[500px] object-cover"
         />
-        <div className="">
-          <h2>{product.common_name}</h2>
-          <div>
-            <h3>${product.price}</h3>
-            <div className=""></div>
+        <div className=" mx-auto bg-white rounded-xl  overflow-hidden md:max-w-2xl">
+          <div className="md:flex">
+            <div className=" md:p-8">
+              <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+                {product.name}
+              </div>
+              <div className="flex justify-between items-center">
+                <p className="mt-2 text-3xl text-green-500 font-semibold">
+                  ${product.price}
+                </p>
+                <div className="mt-2">
+                  <span className="text-yellow-400">★★★★☆</span>
+                  <span className="text-gray-600">
+                    {" "}
+                    {product.review} Customer Review
+                  </span>
+                </div>
+              </div>
+              <p className="mt-4 text-gray-500">
+                The ceramic cylinder planters come with a wooden stand to help
+                elevate your plants off the ground. The ceramic cylinder
+                planters come with a wooden stand to help elevate your plants
+                off the ground.
+              </p>
+              <div className="mt-4">
+                <label className="block text-sm font-medium text-gray-700">
+                  Size:
+                </label>
+                <div className="mt-1 flex space-x-3">
+                  <button
+                    className={`px-3 py-1 border rounded-full text-gray-700 ${
+                      product.size == "s"
+                        ? "border-green-500 bg-green-100"
+                        : "border-gray-300"
+                    }  `}
+                  >
+                    S
+                  </button>
+                  <button
+                    className={`px-3 py-1 border rounded-full text-gray-700 ${
+                      product.size == "m"
+                        ? "border-green-500 bg-green-100"
+                        : "border-gray-300"
+                    }  `}
+                  >
+                    M
+                  </button>
+                  <button
+                    className={`px-3 py-1 border rounded-full text-gray-700 ${
+                      product.size == "l"
+                        ? "border-green-500 bg-green-100"
+                        : "border-gray-300"
+                    }  `}
+                  >
+                    L
+                  </button>
+                  <button
+                    className={`px-3 py-1 border rounded-full text-gray-700 ${
+                      product.size == "xl"
+                        ? "border-green-500 bg-green-100"
+                        : "border-gray-300"
+                    }  `}
+                  >
+                    XL
+                  </button>
+                </div>
+              </div>
+              <div className="mt-4 flex items-center space-x-3">
+                <button className="px-4 py-2 bg-green-500 text-white text-sm font-medium rounded-md">
+                  BUY NOW
+                </button>
+                <button className="px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-md">
+                  ADD TO CART
+                </button>
+                <button className="px-3 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-md">
+                  ❤️
+                </button>
+              </div>
+              <div className="mt-4">
+                <p className="text-gray-600">SKU: 1995751877966</p>
+                <p className="text-gray-600">Categories: Potter Plants</p>
+                <p className="text-gray-600">Tags: Home, Garden, Plants</p>
+              </div>
+              <div className="mt-4 flex space-x-3">
+                <button className="px-3 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-md">
+                  FB
+                </button>
+                <button className="px-3 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-md">
+                  TW
+                </button>
+                <button className="px-3 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-md">
+                  IN
+                </button>
+                <button className="px-3 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-md">
+                  EMAIL
+                </button>
+              </div>
+            </div>
           </div>
-          <hr />
-          <p>Short Description:</p>
-          <p>
-            The ceramic cylinder planters come with a wooden stand to help
-            elevate your plants off the ground. The ceramic cylinder planters
-            come with a wooden stand to help elevate your plants off the ground.{" "}
-          </p>
-          <p>Size:</p>
-
-          <p>SKU: 192132</p>
-          <p>Categories: Potter Plants</p>
-
-          <div className="my-[30px]">
-            <Link
-              to={"/cart"}
-              className="px-5 py-3  border rounded-lg  bg-green-500 uppercase text-white hover:bg-green-600 font-semibold"
-            >
-              add to card
-            </Link>
-          </div>
-          <p>Tags: Home, Garden, Plants</p>
-          <p>Share this products:</p>
         </div>
       </div>
       <div className="">

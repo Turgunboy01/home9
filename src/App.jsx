@@ -4,8 +4,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import ProductDetails from "./pages/productDetails/ProductDetails";
-import Cart from "./pages/cart/Cart";
+// import Cart from "./components/popularProducts/cart/Cart";
 import ScrollTop from "./components/scrollToTop/ScrollTop";
+import Cart from "./pages/cart/Cart";
 
 const App = () => {
   return (

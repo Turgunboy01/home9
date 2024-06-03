@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../../public/logo.png";
 import store from "../../../public/store.png";
 import { IoSearch } from "react-icons/io5";
 import { RxExit } from "react-icons/rx";
-import PopularProducts from "../popularProducts/PopularProducts";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [search, setSearch] = useState("");
   return (
     <div className="lg:container mx-auto px-5 ">
       <div className="flex justify-between items-center py-3">
@@ -27,11 +27,18 @@ const Header = () => {
             Blogs
           </li>
         </div>
-        <div className="flex  items-center gap-[30px]">
+        <div className="flex  items-center gap-[30px] relative">
           {/* <exit /> */}
-          <div className="">
-            <IoSearch />
+          <div className="group flex items-center gap-1 group-hover:border-[1px] border py-2 px-4 border-[#000]">
+            <input
+              type="text"
+              className="group-hover:w-[200px] w-0 outline-none  transition-all "
+            />
+            <div className="">
+              <IoSearch />
+            </div>
           </div>
+          <div className="absolute top-[10px] left-0 w-[200px] h-[300px] border bg-white z-999"></div>
           <Link to={"/cart"} className="">
             <img src={store} alt="" />
           </Link>
