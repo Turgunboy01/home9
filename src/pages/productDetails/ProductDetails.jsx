@@ -13,7 +13,7 @@ const ProductDetails = () => {
         <img
           src={product.img}
           alt=""
-          className="w-[600px] h-[500px] object-cover"
+          className="w-[600px] h-[500px] object-contain"
         />
         <div className=" mx-auto bg-white rounded-xl  overflow-hidden md:max-w-2xl">
           <div className="md:flex">

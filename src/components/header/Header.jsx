@@ -3,11 +3,17 @@ import logo from "../../../public/logo.png";
 import store from "../../../public/store.png";
 import { IoSearch } from "react-icons/io5";
 import { RxExit } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { data } from "../../data";
 
 const Header = () => {
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const handleNavigate = (id) => {
+    navigate(`/card/${id}`);
+    setSearch("");
+  };
 
   const filtered = data.filter((fill) =>
     fill.name.toLowerCase().includes(search.toLowerCase())
@@ -45,18 +51,30 @@ const Header = () => {
               <div className="">
                 <IoSearch />
               </div>
+              {search && (
+                <div
+                  className={`absolute top-[40px] left-0 ${
+                    search ? "w-[650px]" : "group-hover:w-[200px]"
+                  } overflow-y-scroll overflow-hidden h-[300px] border bg-white z-999`}
+                >
+                  {filtered.map((item) => (
+                    <div
+                      className="flex py-2"
+                      onClick={() => handleNavigate(item.id)}
+                      key={item.img}
+                    >
+                      <img
+                        src={item.img}
+                        className="w-[60px] h-[40px]"
+                        alt=""
+                      />
+                      <h3>{item.name}</h3>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
-            {search && (
-              <div className="absolute top-[40px] left-0 w-[200px] overflow-y-scroll h-[300px] border bg-white z-999">
-                {filtered.map((item) => (
-                  <div className="flex" key={item.img}>
-                    <img src={item.img} className="w-[40px] h-[40px]" alt="" />
-                    <h3>{item.name}</h3>
-                  </div>
-                ))}
-              </div>
-            )}
             <Link to={"/cart"} className="">
               <img src={store} alt="" />
             </Link>
